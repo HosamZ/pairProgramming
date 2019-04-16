@@ -16,7 +16,9 @@ import javax.validation.Valid;
 @RequestMapping("/")
 @RequiredArgsConstructor
 public class ValidatedFormMessageController {
+
   private ValidatedMessage validatedMessage = new ValidatedMessage();
+
   private final EncoderClient client;
 
   @ModelAttribute("validatedMessage")
