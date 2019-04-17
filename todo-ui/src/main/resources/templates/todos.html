@@ -23,22 +23,24 @@
 <table>
     <tr>
         <th>List of ToDo:</th>
-        <th>Status:</th>
+        <th>Done:</th>
+        <th>Action:</th>
     </tr>
     <tr th:each="todo : ${todos}">
-            <td th:text="${todo.title}">Title</td>
-            <td>
-            <form method="post" th:action="@{/done}">
-                <input name="id" th:value="${todo.id}" type="checkbox"/>
+        <td th:text="${todo.title}">Title</td>
+        <td>
+            <span th:if="${todo.done == true}">Done!</span>
+            <form th:if="${todo.done == false}" method="post" th:action="@{/done}">
+                <input name="id" th:value="${todo.id}" type="hidden"/>
                 <button type="submit"> Mark it as done</button>
             </form>
-            </td>
-            <td>
-            <form method="post" th:action="@{/}">
-                <input name="id" th:value="${todo.id}" type="button"/>
+        </td>
+        <td>
+            <form method="post" th:action="@{/delete}">
+                <input name="id" th:value="${todo.id}" type="hidden"/>
                 <button type="submit">Get rid of this crap!</button>
             </form>
-            </td>
+        </td>
     </tr>
 </table>
 

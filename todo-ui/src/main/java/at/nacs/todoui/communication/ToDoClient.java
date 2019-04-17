@@ -1,6 +1,6 @@
 package at.nacs.todoui.communication;
 
-import at.nacs.todoui.model.ToDo;
+import at.nacs.todoui.view.model.ToDo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,7 +18,7 @@ public class ToDoClient {
   @Value("${todo.server.url}")
   private String url;
 
-  public ToDo sendToSave(ToDo toDo) {
+  public ToDo save(ToDo toDo) {
     return restTemplate.postForObject(url, toDo, ToDo.class);
   }
 
@@ -26,7 +26,7 @@ public class ToDoClient {
     restTemplate.put(url + "/" + id + "/done", ToDo.class);
   }
 
-  public List<ToDo> getAllToDos() {
+  public List<ToDo> findAll() {
     ToDo[] arrayTodo = restTemplate.getForObject(url, ToDo[].class);
     return new ArrayList<>(Arrays.asList(arrayTodo));
   }
