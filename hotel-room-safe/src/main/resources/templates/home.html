@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html class="home" xmlns:th="http://www.thymeleaf.org">
+<link media="all" rel="stylesheet" th:href="@{/css/style.css}" type="text/css"/>
+
+<head>
+    <title>Security</title>
+</head>
+<body>
+<h1>Welcome to my Hotel</h1>
+<!--<h1>No user required page</h1>-->
+<!--<p>This is just some meaningless text</p>-->
+<a th:href="@{/user}">Go to guest page</a>
+<a th:href="@{/admin}">Go to admin page</a>
+</body>
+</html>
