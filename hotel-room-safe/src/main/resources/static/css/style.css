@@ -1,13 +1,13 @@
-.home{
-    background-color: aliceblue;
+.home {
     font-size: 20px;
     text-align: center;
-    font-family:sans-serif;
-    color: darkblue;
-}
-
-body{ background-color: aliceblue;}
-form {border: 3px solid #f1f1f1;
+    font-family: sans-serif;
+    color: white;
+    background-image: url(thumb-1920-547406.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
 }
 
 
@@ -15,9 +15,6 @@ input[type=text], input[type=password] {
     width: 50%;
     padding: 12px 20px;
     margin: 8px 0;
-    /*display: inline-block;*/
-    /*border: 1px solid #ccc;*/
-    /*box-sizing: border-box;*/
 }
 
 button {
@@ -38,4 +35,8 @@ button:hover {
     width: auto;
     padding: 10px 18px;
     background-color: #f44336;
+}
+
+.privatestuffs {
+    color: bisque;
 }

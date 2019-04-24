@@ -1,4 +1,4 @@
-package at.nacs.hotelroomsafe.configuration;
+package at.nacs.deadmentellnotales.configuration;
 
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
@@ -16,6 +16,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
   protected void configure(HttpSecurity http) throws Exception {
     http
         .authorizeRequests()
+        .antMatchers("/diary").hasRole("carina")
         .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
         .antMatchers("/").permitAll()
         .anyRequest().fullyAuthenticated()
@@ -30,7 +31,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     PasswordEncoder encoder = passwordEncoder();
     auth
         .inMemoryAuthentication()
-        .withUser("guest").password(encoder.encode("secret")).roles("USER");
+        .withUser("jacksparrow").password(encoder.encode("jack")).roles("jacksparrow")
+        .and()
+        .withUser("carina").password(encoder.encode("carina")).roles("carina");
   }
 
   @Bean

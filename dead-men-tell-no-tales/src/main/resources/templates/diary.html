@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>DIARY</title>
+</head>
+<body>
+<h1>Diary Page</h1>
+<form method="get" th:action="@{/diary}">
+<form method="post" th:action="@{/}">
+    <button>DESTROY TRIDENT</button>
+</form>
+<br/>
+    <span th:if="${triedent.status == true}">Done!</span>
+    <form th:if="${triedent.status == false}" method="post" th:action="@{/}">
+<br/>
+</form>
+<!--<a th:href="@{/}">Go to home page</a>-->
+</body>
+</html>
